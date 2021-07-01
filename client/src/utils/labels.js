@@ -113,9 +113,9 @@ const allergyLabels = [
   },
 ];
 
-mealTypes = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Teatime'];
+const mealTypes = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Teatime'];
 
-cuisineTypes = [
+const cuisineTypes = [
   'American',
   'Asian',
   'British',
@@ -136,7 +136,7 @@ cuisineTypes = [
   'South East Asian',
 ];
 
-dishTypes = [
+const dishTypes = [
   'Biscuits and cookies',
   'Bread',
   'Cereals',

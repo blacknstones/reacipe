@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { getRecipesByQuery } from '../api/api';
-import axios from 'axios';
+import globalContext from '../globalContext';
+
+
 const SearchBar = () => {
-  const [query, setQuery] = useState('');
+  let history = useHistory();
+  const{ queryObj, setQueryObj, data, setData } = useContext(globalContext);
+  const [searchVal, setSearchVal] = useState('');
 
   const handleChange = e => {
-    setQuery(e.target.value);
+    setSearchVal(e.target.value);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    getRecipesByQuery({q: query}).then(res => console.log('in clinet', res));
+    setQueryObj({q: searchVal});
+    console.log({queryObj});
+    getRecipesByQuery({q: searchVal}).then(res => setData(res));
+    console.log('data: ', data);
+    setSearchVal('');
+    history.push('/recipes');
+
   };
 
   return (
@@ -20,7 +31,7 @@ const SearchBar = () => {
           type='text'
           placeholder='Find your taste...'
           name='query'
-          value={query}
+          value={searchVal}
           onChange={handleChange}
           required
         />

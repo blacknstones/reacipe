@@ -1,0 +1,14 @@
+body {
+    width: 100vw;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.recipe-card {
+    padding: 1rem;
+    cursor: pointer;
+}
