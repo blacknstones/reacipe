@@ -1,18 +1,39 @@
-import React, { useContext, useState } from 'react';
-import globalContext from '../globalContext.js';
+import React from 'react';
 import { FilterButton } from './index';
 
-import { dietLabels, healthLabels, allergyLabels, mealTypes, cuisineTypes, dishTypes } from '../utils/labels.js'
+import {
+  dietLabels,
+  healthLabels,
+  allergyLabels,
+  mealTypes,
+  cuisineTypes,
+} from '../utils/labels.js';
 
 const Filters = () => {
-
-    return (
-        <div>
-            {dietLabels.map(el => 
-            <FilterButton data={el}/>)}
-            
-        </div>
-    )
-}
+  return (
+    <div>
+      <p>Diet</p>
+      {dietLabels.map(el => (
+        <FilterButton key={el.label} data={el} />
+      ))}
+      <p>Health</p>
+      {healthLabels.map(el => (
+        <FilterButton key={el.label} data={el} />
+      ))}
+      <p>Allergy</p>
+      {allergyLabels.map(el => (
+        <FilterButton key={el.label} data={el} />
+      ))}
+      <p>Cuisine</p>
+      {cuisineTypes.map(el => (
+        <FilterButton key={el.label} data={el} />
+      ))}
+      <p>Meal</p>
+      {mealTypes.map(el => (
+        <FilterButton key={el.label} data={el} />
+      ))}
+    </div>
+  );
+};
 
 export default Filters;

@@ -3,7 +3,8 @@ import globalContext from '../globalContext';
 
 const FilterButton = ({data}) => {
     const {filters, setFilters} = useContext(globalContext);
-    const [isActive, setIsActive] = useState(false);
+    const initialActive = filters.find(el => el.label === data.label) ? true : false;
+    const [isActive, setIsActive] = useState(initialActive);
 
     const handleClick = () => {
         const status = !isActive;
@@ -18,7 +19,7 @@ const FilterButton = ({data}) => {
     }
 
     return (
-        <button className={`filter-button ${isActive ? 'active' : ''}`} onClick={handleClick}>{data.webLabel}</button>
+        <button className={`filter-button ${isActive ? 'active' : ''}`} onClick={handleClick}>{data.webLabel ? data.webLabel : data.label}</button>
     )
 }
 

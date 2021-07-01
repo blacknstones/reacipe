@@ -1,18 +1,20 @@
 import { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { HomePage, RecipesPage, DetailPage } from './pages';
+import { HomePage, RecipesPage, DetailPage, FavoritePage } from './pages';
+import { NavBar } from './components';
 import globalContext from './globalContext';
 import './css/main.css';
 
 function App() {
-  const [queryObj, setQueryObj] = useState({});
+  const [searchQuery, setSearchQuery] = useState('');
   const [data, setData] = useState(null);
   const [filters, setFilters] = useState([]);
 
   return (
-    <globalContext.Provider value={{ queryObj, setQueryObj, data, setData, filters, setFilters }}>
+    <globalContext.Provider value={{ searchQuery, setSearchQuery, data, setData, filters, setFilters }}>
       <div className='App'>
         <BrowserRouter>
+        <NavBar/>
           <Switch>
             <Route exact path='/'>
               <HomePage />
@@ -22,6 +24,9 @@ function App() {
             </Route>
             <Route exact path='/recipes/:id'>
               <DetailPage />
+            </Route>
+            <Route exact path='/favorites'>
+              <FavoritePage />
             </Route>
           </Switch>
         </BrowserRouter>

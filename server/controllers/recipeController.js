@@ -34,10 +34,19 @@ const getRecipesByQuery = async (request, response) => {
   }
 };
 
-const getRecipeById = (request, response) => {
+const getRecipeById = async (request, response) => {
   const { id } = request.params;
   console.log(id);
-  // axios.get(baseUrl)
+
+  try {
+    const result = await axios.get(`${baseUrl}/${id}`, {
+      params: baseParams
+    });
+    response.send(result.data);
+    
+  } catch(err) {
+    response.status(404).send('error!!');
+  }
 };
 
 const getNextPage = async (request, response) => {

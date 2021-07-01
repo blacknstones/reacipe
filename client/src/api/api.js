@@ -13,6 +13,15 @@ const getRecipesByQuery = async (query) => {
   }
 }
 
+const getRecipeById = async (id) => {
+  try {
+    const result = await axios.get('/api/recipes/' + id);
+    return result.data;
+  } catch(error) {
+    return {error};
+  }
+}
+
 const getNextPage = async (url) => {
   console.log('sending next request: ', url);
   try {
@@ -28,5 +37,9 @@ const getNextPage = async (url) => {
   }
 }
 
+/* const addToFavorites = async (recipe) = {
 
-export { getRecipesByQuery, getNextPage };
+} */
+
+
+export { getRecipesByQuery, getRecipeById, getNextPage };
