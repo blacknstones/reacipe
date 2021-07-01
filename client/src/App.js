@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './pages/Home';
+imort globalContext from '../'
 
 function App() {
 

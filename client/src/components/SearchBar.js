@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getRecipesByQuery } from '../api/api';
-
+import axios from 'axios';
 const SearchBar = () => {
   const [query, setQuery] = useState('');
 
@@ -10,7 +10,7 @@ const SearchBar = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-   console.log(getRecipesByQuery({q: query}));
+    getRecipesByQuery({q: query}).then(res => console.log('in clinet', res));
   };
 
   return (

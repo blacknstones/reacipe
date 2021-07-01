@@ -1,9 +1,16 @@
 import axios from 'axios';
 
-const getRecipesByQuery = query => {
-    return axios.get('/api/recipes', {
-        params: query,
-      }).then(res => res.data);
+const getRecipesByQuery = async (query) => {
+
+  try {
+    const result = await axios.get('/api/recipes', {
+       params: query,
+     });
+     return result.data;
+
+  } catch (error) {
+    return {error};
+  }
 }
 
 
