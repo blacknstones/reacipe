@@ -12,3 +12,8 @@ body {
     padding: 1rem;
     cursor: pointer;
 }
+
+
+.filter-button.active {
+    background-color: tomato;
+}

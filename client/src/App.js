@@ -7,9 +7,10 @@ import './css/main.css';
 function App() {
   const [queryObj, setQueryObj] = useState({});
   const [data, setData] = useState(null);
+  const [filters, setFilters] = useState([]);
 
   return (
-    <globalContext.Provider value={{ queryObj, setQueryObj, data, setData }}>
+    <globalContext.Provider value={{ queryObj, setQueryObj, data, setData, filters, setFilters }}>
       <div className='App'>
         <BrowserRouter>
           <Switch>

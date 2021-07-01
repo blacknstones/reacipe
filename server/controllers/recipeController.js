@@ -26,9 +26,6 @@ const getRecipesByQuery = async (request, response) => {
     });
 
     response.send({
-      from: result.data.from,
-      to: result.data.to,
-      count: result.data.count,
       recipes: result.data.hits,
       next: result.data._links.next.href,
     });
@@ -43,4 +40,20 @@ const getRecipeById = (request, response) => {
   // axios.get(baseUrl)
 };
 
-export { getRecipesByQuery, getRecipeById };
+const getNextPage = async (request, response) => {
+  const rawUrl = request.url;
+  const nextUrl = parseQuery(rawUrl).url;
+
+  try {
+    const result = await axios.get(nextUrl);
+    
+    response.send({
+      recipes: result.data.hits,
+      next: result.data._links.next.href,
+    })
+  } catch (err) {
+    response.status(404).send('error!!');
+  }
+}
+
+export { getRecipesByQuery, getRecipeById, getNextPage };

@@ -13,5 +13,20 @@ const getRecipesByQuery = async (query) => {
   }
 }
 
+const getNextPage = async (url) => {
+  console.log('sending next request: ', url);
+  try {
+    const result = await axios.get('/api/recipes/next', {
+      params: {
+        url
+      }
+    });
+    return result.data;
 
-export { getRecipesByQuery };
+  } catch(error) {
+    return {error};
+  }
+}
+
+
+export { getRecipesByQuery, getNextPage };
