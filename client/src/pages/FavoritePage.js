@@ -8,16 +8,15 @@ const FavoritePage = () => {
 
     useEffect(() => {
             getFavorites().then(res => {
-                console.log(res.data.favorites);
                 setFavorites(res.data.favorites);
             });
     }, []);
 
 
     return (
-        <div>
-            favorite page
-            {favorites ? favorites.map(el => <RecipeCard data={el.recipe}/>) : <p>No Favorites!</p>}
+        <div className="favorites-page">
+            <h1>Your Favorites</h1>
+            {favorites ? <div className="cards">{favorites.map(el => <RecipeCard data={el.recipe}/>)}</div> : <p>No Favorites!</p>}
             
         </div>
     )

@@ -50,22 +50,29 @@ const SearchBar = () => {
     <div className='search-bar'>
       <form onSubmit={handleSubmit}>
         <input
+          className='search__input'
           type='text'
-          placeholder='Find your taste...'
+          placeholder='Search for recipes...'
           name='query'
           value={searchVal}
           onChange={handleChange}
           required
         />
-        <input type='submit' value='Search' />
+        <input className='search__button' type='submit' value='Search' />
       </form>
-      {searchQuery}
-      {filters.map(el => (
-        <span>{el.webLabel ? el.webLabel : el.label}</span>
-      ))}
-      <button onClick={() => setFilterIsOpen(!filterIsOpen)}>{filterIsOpen ? 'Hide filter' : 'Add Filter'}</button>
 
-      {filterIsOpen && <Filters />}
+      <button
+        className='filter__button-add'
+        onClick={() => setFilterIsOpen(!filterIsOpen)}>
+        {filterIsOpen ? 'Hide filter' : 'Add Filter'}
+      </button>
+      <div className="filters-selected">
+        {filters.map(el => (
+        <span className="filters__item-selected">{el.webLabel ? el.webLabel : el.label}</span>
+      ))}
+      </div>
+      
+      {filterIsOpen && <Filters setOpen={setFilterIsOpen}/>}
     </div>
   );
 };

@@ -17,16 +17,17 @@ const DetailPage = () => {
   );
 
   const handleClick = () => {
-    getFavoriteStatus(favorites, id);
-    if (!isFavorite) {
-      addToFavorites({ id, recipe: currentRecipe });
+    const status = !isFavorite;
+    setIsFavorite(status);
+    if (status) {
+      addToFavorites({ id, recipe: currentRecipe }).then(res => setFavorites(res));
     } else {
-      removeFromFavorites(id);
+      removeFromFavorites(id).then(res => setFavorites(res));
     }
   };
 
   useEffect(() => {
-    console.log('in detail page', data);
+    console.log('in detail page', currentRecipe);
 
     if (data) {
       const recipeData = data.recipes.filter(el =>
@@ -34,7 +35,6 @@ const DetailPage = () => {
       )[0];
 
       if (recipeData) {
-        console.log('There is something here...');
         const recipe = recipeData.recipe;
         setCurrentRecipe(recipe);
       } else {
@@ -45,20 +45,20 @@ const DetailPage = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Detail Page</h1>
+    <div className="detail-page">
       {currentRecipe ? (
-        <div>
+        <div className="recipe-detail">
           <h2>{currentRecipe.label}</h2>
           <button onClick={handleClick}>{isFavorite ? 'Remove from Favorites' : 'Add to favorites'}</button>
           <br />
           <img src={currentRecipe.image} alt={currentRecipe.label} />
-          <div>
-            <p>Ingredients:</p>
+          <div className="ingredients">
+            <p>{`${currentRecipe.ingredients.length} Ingredients`}</p>
             {currentRecipe.ingredientLines.map(el => (
               <p>{el}</p>
             ))}
           </div>
+          <div>Nutrition</div>
         </div>
       ) : (
         <p>Recipe not found!</p>

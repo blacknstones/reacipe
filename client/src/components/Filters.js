@@ -9,14 +9,23 @@ import {
   cuisineTypes,
 } from '../utils/labels.js';
 
-const Filters = () => {
+const Filters = ({setOpen}) => {
   return (
-    <div>
-      <p>Diet</p>
+    <div className="filters">
+      <div className="filters__content">
+      <button
+          className="close__button"
+          onClick={() => {
+            setOpen(false);
+          }}
+        >
+          Close
+        </button>
+        <p>Health</p>
       {dietLabels.map(el => (
         <FilterButton key={el.label} data={el} />
       ))}
-      <p>Health</p>
+      <p>Diet</p>
       {healthLabels.map(el => (
         <FilterButton key={el.label} data={el} />
       ))}
@@ -32,6 +41,8 @@ const Filters = () => {
       {mealTypes.map(el => (
         <FilterButton key={el.label} data={el} />
       ))}
+      </div>
+      
     </div>
   );
 };

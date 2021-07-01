@@ -8,7 +8,6 @@ const RecipesPage = () => {
 
   const handleClick = () => {
     getNextPage(data.next).then(res => {
-      console.log('in client: next page', res);
       setData({
         recipes: [...data.recipes, ...res.recipes],
         next: res.next,
@@ -21,8 +20,8 @@ const RecipesPage = () => {
   }, [data]);
 
   return (
-    <div>
-      <h1>Recipes Page</h1>
+    <div className="recipes-page">
+      <h1>Explore Recipes</h1>
       <SearchBar />
       {data ? 
       <div>

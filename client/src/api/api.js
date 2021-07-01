@@ -51,6 +51,7 @@ const addToFavorites = async (recipe) => {
   try {
     const response = await axios.post('/api/favorites', recipe);
     console.log('adding to favorites', response);
+    return response.data.favorites;
 
   } catch(error) {
     console.log(error);
@@ -60,7 +61,7 @@ const addToFavorites = async (recipe) => {
 const removeFromFavorites = async (id) => {
   try {
     const response = await axios.delete('/api/favorites/' + id);
-    console.log('deleting favorites', response);
+    return response.data.newFavorites;
   } catch(error) {
     console.log(error);
   }
