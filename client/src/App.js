@@ -9,9 +9,10 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [data, setData] = useState(null);
   const [filters, setFilters] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   return (
-    <globalContext.Provider value={{ searchQuery, setSearchQuery, data, setData, filters, setFilters }}>
+    <globalContext.Provider value={{ searchQuery, setSearchQuery, data, setData, filters, setFilters, favorites, setFavorites }}>
       <div className='App'>
         <BrowserRouter>
         <NavBar/>

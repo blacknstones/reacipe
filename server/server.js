@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import recipeRouter from './routes/recipeRouter.js';
-import userRouter from './routes/userRouter';
+import userRouter from './routes/userRouter.js';
 
 dotenv.config();
 

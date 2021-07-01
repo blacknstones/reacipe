@@ -36,7 +36,6 @@ const getRecipesByQuery = async (request, response) => {
 
 const getRecipeById = async (request, response) => {
   const { id } = request.params;
-  console.log(id);
 
   try {
     const result = await axios.get(`${baseUrl}/${id}`, {
