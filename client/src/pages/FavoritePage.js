@@ -15,8 +15,11 @@ const FavoritePage = () => {
 
     return (
         <div className="favorites-page">
-            <h1>Your Favorites</h1>
+            <h1 className="favorites__page__title">Your Favorites</h1>
+            <div className="favorites__container">
             {favorites ? <div className="cards">{favorites.map(el => <RecipeCard data={el.recipe}/>)}</div> : <p>No Favorites!</p>}
+
+            </div>
             
         </div>
     )

@@ -1,205 +1,225 @@
 @import './reset.css';
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400&display=swap');
 
 a {
-    color: black;
+  color: black;
 }
 
 body {
-    font-family: "Roboto Mono", monospace;
-    width: 100%;
+  font-family: 'Roboto Mono', monospace;
+  width: 100%;
 }
 
 .navbar {
-    width: 100vw;
-    padding: 0;
-    margin: 0;
-    height: 8vh;
-    width: 100%;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    background-color: rgb(255, 255, 255);
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  height: 8vh;
+  width: 100%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  background-color: rgb(255, 255, 255);
 }
 
 .nav-link {
-    color: rgba(5, 19, 34, 0.79);
+  color: rgba(5, 19, 34, 0.79);
 }
 
 .nav-link:hover {
-    color:rgba(13, 126, 196, 0.625);
-    transition: ease-in-out 0.2s all;
-
+  color: rgba(13, 126, 196, 0.625);
+  transition: ease-in-out 0.2s all;
 }
 
 .home-page {
-    height: 100vh;
-    background: url('../assets/bg.jpg');
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  background: url('../assets/bg.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.recipes-page, .favorites-page, .detail-page {
-    margin-top: 8vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.home-page .brand {
+    color: rgba(13, 126, 196, 0.625);
+}
+
+.recipes-page,
+.favorites-page,
+.detail-page {
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorites__page__title {
+    margin-top: 2rem;
 }
 
 .recipes__container {
-    width: 98%;
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorites__container {
+    width: 97%;
+}
+
+.show__button {
+  margin: 3rem;
+  padding: 1rem;
+  font-family: 'Roboto Mono', monospace;
+  cursor: pointer;
+  transition: ease-in-out 0.2s all;
+}
+
+.show__button:hover {
+  background-color: rgba(13, 126, 196, 0.625);
+  color: white;
 }
 
 .cards {
-    width: 100%;
-    margin-top: 3rem;
-    display: grid;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: space-evenly;
-    align-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(50px, 320px));
-    grid-auto-flow: row;
-    grid-gap: 1.5rem;
-
+  width: 100%;
+  margin-top: 3rem;
+  display: grid;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-evenly;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 320px));
+  grid-auto-flow: row;
+  grid-gap: 1.5rem;
 }
 
 .recipe__card {
-    width: 100%;
-    height: 100%;
-    border: 3px solid rgba(69, 70, 72, 0.139);
-    cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(69, 70, 72, 0.139);
+  cursor: pointer;
 }
 
 .recipe__card:hover {
-    border: 3px solid rgba(13, 126, 196, 0.625);
-    box-shadow: 10px 10px 0px 0px rgba(13, 126, 196, 0.625);
-    transform: translateX(-2px) ;
-    transition: ease-in-out 0.2s all;
-    
+  border: 3px solid rgba(13, 126, 196, 0.625);
+  box-shadow: 10px 10px 0px 0px rgba(13, 126, 196, 0.625);
+  transform: translateX(-2px);
+  transition: ease-in-out 0.2s all;
 }
 
 .recipe__card:hover .recipe__card__tag__item {
-    background-color: thistle;
-    text-decoration: none;
+  background-color: thistle;
+  text-decoration: none;
 }
 .recipe__card:hover .recipe__card__name {
-    text-decoration: underline;
-    text-decoration-color: rgba(13, 126, 196, 0.625);
-
+  text-decoration: underline;
+  text-decoration-color: rgba(13, 126, 196, 0.625);
 }
 
 .recipe__card__content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration-color: rgba(13, 126, 196, 0.625);
-
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration-color: rgba(13, 126, 196, 0.625);
 }
 
 .recipe__card__img {
-    width: 100%;
-
+  width: 100%;
 }
 
 .recipe__card__name {
-    font-size: 2rem;
-    color: rgb(50, 53, 58);
+  font-size: 2rem;
+  color: rgb(50, 53, 58);
 }
 
 .recipe__card__tag {
-    width: 90%;
-    display: flex;
-    justify-content: space-evenly;
-    text-decoration: none;
-    padding: 0.5rem;
-    color: grey;
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  text-decoration: none;
+  padding: 0.5rem;
+  color: grey;
 }
 
 .search-bar {
-    padding: 1rem;
-    position: relative;
+  padding: 1rem;
+  position: relative;
 }
 
 .search__actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search__form {
-    display: flex;
-
+  display: flex;
 }
 
 .search__input {
-    padding: 0.59rem;
-    border: 2px solid rgb(55, 152, 213);
+  padding: 0.59rem;
+  border: 2px solid rgb(55, 152, 213);
 }
 
 .search__button {
-    padding: 0.48rem;
-    border: 2px solid rgba(13, 126, 196, 0.625);
-    background-color: rgb(108, 183, 230);
-    font-family: "Roboto Mono", monospace;
-    cursor: pointer;
-
+  padding: 0.48rem;
+  border: 2px solid rgba(13, 126, 196, 0.625);
+  background-color: rgb(108, 183, 230);
+  font-family: 'Roboto Mono', monospace;
+  cursor: pointer;
 }
 
 .search__button:hover {
-    color: white;
-    transition: ease-in-out 0.2s all;
+  color: white;
+  transition: ease-in-out 0.2s all;
 }
 
 .filter__button-add {
-    margin-left: 0.5rem;
-    padding: 0.5rem;
-    cursor: pointer;
-    background-color: rgba(199, 199, 199, 0.714);
-    font-family: "Roboto Mono", monospace;
-    color: black;
-
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: rgba(199, 199, 199, 0.714);
+  font-family: 'Roboto Mono', monospace;
+  color: black;
 }
 
 .filter__button-add:hover {
-    background-color: thistle;
-    color: white;
-    transition: ease-in-out 0.2s all;
+  background-color: thistle;
+  color: white;
+  transition: ease-in-out 0.2s all;
 }
 
 .filter-button {
-    margin: 0.2rem;
-    padding: 0.3rem;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.495);
+  margin: 0.2rem;
+  padding: 0.3rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.495);
 }
 
 .filter-button:hover {
-    transition: ease-in-out 0.2s all;
-    transform: scale(1.05);
-    color: linen;
-    background-color: rgba(86, 165, 215, 0.79);
-
+  transition: ease-in-out 0.2s all;
+  transform: scale(1.05);
+  color: linen;
+  background-color: rgba(86, 165, 215, 0.79);
 }
 
 .filter-button.active {
-    border:2px solid rgb(55, 152, 213);
+  border: 2px solid rgb(55, 152, 213);
 }
 
-
 .filters {
-    padding: 1rem;
-    width: 100%;
+  padding: 1rem;
+  width: 100%;
   height: 100%;
   display: block;
   position: fixed;
@@ -219,177 +239,165 @@ body {
 }
 
 .filters__content {
-    background-color: thistle;
-    font-size: 23px;
-    margin: auto;
-    padding: 30px;
-    width: 500px;
-    height: 500px;
-    line-height: 1.1;
-    position: relative;
+  background-color: thistle;
+  font-size: 23px;
+  margin: auto;
+  padding: 30px;
+  width: 500px;
+  height: 500px;
+  line-height: 1.1;
+  position: relative;
 }
 
 .filters__group {
-    margin-bottom: 1rem;;
+  margin-bottom: 1rem;
 }
 .filters-selected {
-    position: absolute;
-    top: 4rem;
-    width: 800px;
+  position: absolute;
+  top: 4rem;
+  width: 800px;
 }
 .filters__item-selected {
-    background-color: thistle;
-    margin-right: 0.2rem;
-    padding: 0.2rem;
+  background-color: thistle;
+  margin-right: 0.2rem;
+  padding: 0.2rem;
 }
 
 .close__button {
-    position:absolute;
-    top: 1rem;
-    right: 1.2rem;
-    cursor: pointer;
-    background-color: transparent;
-    font-size: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 1.5rem;
 }
 
-
 .close__button:hover {
-    color:rgba(13, 126, 196, 0.625);
-    transform: scale(1.2);
-    transition: ease-in-out 0.2s all;
+  color: rgba(13, 126, 196, 0.625);
+  transform: scale(1.2);
+  transition: ease-in-out 0.2s all;
 }
 
 .recipe__detail {
-    padding: 2rem;
-    max-width: 1000px;
+  padding: 2rem;
+  max-width: 1000px;
 }
 .recipe__detail__group {
-    display: flex;
-    margin-bottom: 1.5rem;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .recipe-favorite {
-    position: relative;
-display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .favorite__button {
-font-size: 2rem;
-background-color: transparent;
-color: thistle;
+  font-size: 2rem;
+  background-color: transparent;
+  color: thistle;
 }
 
 .favorite__button-tag {
-    position:absolute;
-    font-size: 0.8rem;
-    left: 2.5rem;
-
+  position: absolute;
+  font-size: 0.8rem;
+  left: 2.5rem;
 }
 
 .recipe__detail__name {
-    margin-right: 0.5rem;
-}
-
-.recipe__detail__group#group-2
- {
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.recipe__detail__image {
-    margin-right: 2rem;
-    border: 3px solid rgba(13, 126, 196, 0.625);
-    box-shadow: 10px 10px 0px 0px rgba(13, 126, 196, 0.625);
-}
-
-.recipe__detail__tags {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: space-evenly;
-    flex-grow: 1;
-}
-
-.recipe__detail__tags__group {
-    margin-bottom: 1rem;
-}
-
-.recipe__detail__tags__item {
-    margin-right: 1rem;
-    background-color: rgb(255, 235, 235);
-}
-
-.tag-hightlight {
-    background-color: thistle;
-}
-
-.tag-name {
-    background-color: rgba(0, 128, 128, 0.79);
-    color:white;
-    margin: 0 0.5rem 0.5rem 0;
-    padding: 0.2rem 0.4rem;
-
-
-
-}
-
-.recipe__detail__tags__group#group-3 {
-    display: flex; 
-    flex-wrap: wrap;
-}
-
-.tag-type {
-    background-color: rgba(13, 126, 196, 0.625);
-    margin-right: 0.5rem;
-    padding: 0.2rem 0.4rem;
-
+  margin-right: 0.5rem;
 }
 
 .recipe__detail__group#group-2 {
-   justify-content: space-between;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
 
+.recipe__detail__image {
+  margin-right: 2rem;
+  border: 3px solid rgba(13, 126, 196, 0.625);
+  box-shadow: 10px 10px 0px 0px rgba(13, 126, 196, 0.625);
+}
+
+.recipe__detail__tags {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-evenly;
+  flex-grow: 1;
+}
+
+.recipe__detail__tags__group {
+  margin-bottom: 1rem;
+}
+
+.recipe__detail__tags__item {
+  margin-right: 1rem;
+  background-color: rgb(255, 235, 235);
+}
+
+.tag-hightlight {
+  background-color: thistle;
+}
+
+.tag-name {
+  background-color: rgba(0, 128, 128, 0.79);
+  color: white;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.2rem 0.4rem;
+}
+
+.recipe__detail__tags__group#group-3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-type {
+  background-color: rgba(13, 126, 196, 0.625);
+  margin-right: 0.5rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.recipe__detail__group#group-2 {
+  justify-content: space-between;
 }
 
 .recipe__detail__group#group-3 {
-    flex-direction: column;
-    margin-top: 2rem;
-    
-
+  flex-direction: column;
+  margin-top: 2rem;
 }
 
 .preparation {
-    display: flex;
-    width: 100%;
-    margin-top: 1rem;
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
 }
 
-.ingredients, .instruction {
-    background-color:rgba(250, 240, 230, 0.735);
-    padding: 1rem;
+.ingredients,
+.instruction {
+  background-color: rgba(250, 240, 230, 0.735);
+  padding: 1rem;
 }
 
 .ingredients {
-    margin-right: 2rem;
+  margin-right: 2rem;
+  flex-grow: 1;
 }
 
 .instruction {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .instruction-link {
-    background-color:rgba(13, 126, 196, 0.413);
-    
+  background-color: rgba(13, 126, 196, 0.413);
 }
 
 .instruction-link:hover {
-    color: white;
-
+  color: white;
 }
-
-

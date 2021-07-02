@@ -4,7 +4,7 @@ import { SearchBar } from '../components';
 const HomePage = () => {
     return (
         <div className="home-page">
-            <h1>Explore your Taste</h1>
+            <h1>Eat <span className="brand">Healthier</span> than yesterday.</h1>
             <SearchBar/>
         </div>
     )

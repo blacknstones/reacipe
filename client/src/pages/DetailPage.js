@@ -110,9 +110,12 @@ const DetailPage = () => {
               </div>
 
               <div className='recipe__detail__tags__group'>
-                <span className='tag-type'>{currentRecipe.cuisineType}</span>
-                <span className='tag-type'>{currentRecipe.dishType}</span>
-                <span className='tag-type'>{currentRecipe.mealType}</span>
+                
+
+    
+                <span className='tag-type'>{currentRecipe.cuisineType ? currentRecipe.cuisineType : 'Delish'}</span>
+                <span className='tag-type'>{currentRecipe.dishType ? currentRecipe.dishType : 'Meal'}</span>
+                <span className='tag-type'>{currentRecipe.mealType ? currentRecipe.mealType : 'For the day'}</span>
               </div>
             </div>
           </div>

@@ -26,7 +26,7 @@ const RecipesPage = () => {
       {data ? 
       <div className="recipes__container">
         <Cards data={data.recipes} /> 
-        <button onClick={handleClick}>Show more</button>
+        <button className="show__button" onClick={handleClick}>Show more</button>
       </div>
       : 
       <p>Loading...</p>}
