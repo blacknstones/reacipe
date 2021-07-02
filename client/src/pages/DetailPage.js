@@ -20,7 +20,9 @@ const DetailPage = () => {
     const status = !isFavorite;
     setIsFavorite(status);
     if (status) {
-      addToFavorites({ id, recipe: currentRecipe }).then(res => setFavorites(res));
+      addToFavorites({ id, recipe: currentRecipe }).then(res =>
+        setFavorites(res)
+      );
     } else {
       removeFromFavorites(id).then(res => setFavorites(res));
     }
@@ -45,20 +47,120 @@ const DetailPage = () => {
   }, []);
 
   return (
-    <div className="detail-page">
+    <div className='detail-page'>
       {currentRecipe ? (
-        <div className="recipe-detail">
-          <h2>{currentRecipe.label}</h2>
-          <button onClick={handleClick}>{isFavorite ? 'Remove from Favorites' : 'Add to favorites'}</button>
-          <br />
-          <img src={currentRecipe.image} alt={currentRecipe.label} />
-          <div className="ingredients">
-            <p>{`${currentRecipe.ingredients.length} Ingredients`}</p>
-            {currentRecipe.ingredientLines.map(el => (
-              <p>{el}</p>
-            ))}
+        <div className='recipe__detail'>
+          <div className='recipe__detail__group' id='group-1'>
+            <h1 className='recipe__detail__name'>{currentRecipe.label}</h1>
+            <div className='recipe-favorite'>
+              <button className='favorite__button' onClick={handleClick}>
+                {isFavorite ? (
+                  <i className='fas fa-heart'></i>
+                ) : (
+                  <i className='far fa-heart'></i>
+                )}
+              </button>
+              <p className='favorite__button-tag'>
+                {isFavorite ? 'Remove from Favorites' : 'Add to favorites'}
+              </p>
+            </div>
           </div>
-          <div>Nutrition</div>
+
+          <div className='recipe__detail__group' id='group-2'>
+            <img
+              className='recipe__detail__image'
+              src={currentRecipe.image}
+              alt={currentRecipe.label}
+            />
+            <div className='recipe__detail__tags'>
+              <div className='recipe__detail__tags__group'>
+                <span className='recipe__detail__tags__item'>
+                  <span className='tag-hightlight'>
+                    {Math.floor(currentRecipe.calories)}
+                  </span>
+                  <span> Calories in total</span>
+                </span>
+
+                <span className='recipe__detail__tags__item'>
+                  <span className='tag-hightlight'>{currentRecipe.yield}</span>
+                  <span> Servings</span>
+                </span>
+              </div>
+
+              <div className='recipe__detail__tags__group'>
+                <span className='recipe__detail__tags__item'>
+                  <span className='tag-hightlight'>
+                    {Math.floor(currentRecipe.calories / currentRecipe.yield)}
+                  </span>
+                  <span> Calories per serving</span>
+                </span>
+              </div>
+
+              <div className='recipe__detail__tags__group' id='group-3'>
+                {currentRecipe.dietLabels.map(el => (
+                  <div className='tag-name' key={el.index}>
+                    {el}
+                  </div>
+                ))}
+                {currentRecipe.healthLabels.map(el => (
+                  <div className='tag-name' key={el.index}>
+                    {el}
+                  </div>
+                ))}
+              </div>
+
+              <div className='recipe__detail__tags__group'>
+                <span className='tag-type'>{currentRecipe.cuisineType}</span>
+                <span className='tag-type'>{currentRecipe.dishType}</span>
+                <span className='tag-type'>{currentRecipe.mealType}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className='recipe__detail__group' id='group-3'>
+            <h2>Preparation</h2>
+            <div className="preparation">
+              <div className='ingredients'>
+                <div className='recipe__detail__tags__group'>
+                  <span className='recipe__detail__tags__item'>
+                    <span className='tag-hightlight'>
+                      {currentRecipe.ingredients.length}
+                    </span>
+
+                    <span> Ingredients</span>
+                  </span>
+                </div>
+
+                {currentRecipe.ingredientLines.map(el => (
+                  <p>{el}</p>
+                ))}
+              </div>
+
+              <div className='instruction'>
+
+                <div className='recipe__detail__tags__group'>
+                  <span className='recipe__detail__tags__item'>
+                    <span className='tag-hightlight'>
+                      {currentRecipe.totalTime}
+                    </span>
+                    <span> Minutes</span>
+                  </span>
+                </div>
+
+                <div>
+                  <p>See full instructions at:</p>
+                  <a className="instruction-link" href={currentRecipe.url} target="_blank">{currentRecipe.source}</a>
+                </div>
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+
         </div>
       ) : (
         <p>Recipe not found!</p>

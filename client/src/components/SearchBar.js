@@ -48,7 +48,8 @@ const SearchBar = () => {
 
   return (
     <div className='search-bar'>
-      <form onSubmit={handleSubmit}>
+      <div className="search__actions">
+      <form className='search__form' onSubmit={handleSubmit}>
         <input
           className='search__input'
           type='text'
@@ -64,8 +65,9 @@ const SearchBar = () => {
       <button
         className='filter__button-add'
         onClick={() => setFilterIsOpen(!filterIsOpen)}>
-        {filterIsOpen ? 'Hide filter' : 'Add Filter'}
+        Add filter
       </button>
+      </div>
       <div className="filters-selected">
         {filters.map(el => (
         <span className="filters__item-selected">{el.webLabel ? el.webLabel : el.label}</span>

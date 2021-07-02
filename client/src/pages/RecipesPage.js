@@ -21,10 +21,10 @@ const RecipesPage = () => {
 
   return (
     <div className="recipes-page">
-      <h1>Explore Recipes</h1>
+      
       <SearchBar />
       {data ? 
-      <div>
+      <div className="recipes__container">
         <Cards data={data.recipes} /> 
         <button onClick={handleClick}>Show more</button>
       </div>
