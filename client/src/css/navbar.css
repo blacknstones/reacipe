@@ -1,0 +1,25 @@
+.navbar {
+    padding: 0;
+    margin: 0;
+    height: 4rem;
+    width: 100vw;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .nav-link {
+    color: rgba(13, 126, 196, 0.5);
+    font-family: 'Cutive Mono', monospace;
+  }
+  
+  .nav-link:hover {
+    color: rgba(13, 126, 196, 0.9);;
+    background-color: linen;
+    transition: ease-in-out 0.2s all;
+  }

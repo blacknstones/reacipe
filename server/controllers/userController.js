@@ -4,7 +4,7 @@ const fs = fsWithCallbacks.promises;
 const getFavorites = async (request, response) => {
   console.log('user is getting favorites');
   try {
-    const dbData = await fs.readFile('./db/favorites.json');
+    const dbData = await fs.readFile('./server/db/favorites.json');
     const favorites = JSON.parse(dbData);
     response.json({ favorites });
   } catch (error) {
@@ -16,13 +16,13 @@ const addFavorite = async (request, response) => {
   console.log('user is posting to favorites');
   try {
     const favorite = request.body;
-    const dbData = await fs.readFile('./db/favorites.json');
+    const dbData = await fs.readFile('./server/db/favorites.json');
     const favorites = JSON.parse(dbData);
     if (favorites.find(el => el.id === favorite.id)) {
       response.json({ favorites });
     } else {
       favorites.push(favorite);
-      await fs.writeFile('./db/favorites.json', JSON.stringify(favorites));
+      await fs.writeFile('./server/db/favorites.json', JSON.stringify(favorites));
       response.json({ favorites });
     }
   } catch (error) {
@@ -36,11 +36,11 @@ const deleteFavorite = async (request, response) => {
   const id = request.params.id;
   console.log(id);
   try {
-    const dbData = await fs.readFile('./db/favorites.json');
+    const dbData = await fs.readFile('./server/db/favorites.json');
     const favorites = JSON.parse(dbData);
     if (favorites.find(el => el.id === id)) {
       const newFavorites = favorites.filter(el => el.id !== id);
-      await fs.writeFile('./db/favorites.json', JSON.stringify(newFavorites));
+      await fs.writeFile('./server/db/favorites.json', JSON.stringify(newFavorites));
       response.json({newFavorites});
     }
   } catch (error) {

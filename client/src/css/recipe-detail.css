@@ -1,0 +1,147 @@
+.recipe__detail {
+  padding: 1rem;
+  max-width: 1000px;
+}
+.recipe__detail__group {
+  display: flex;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe__detail__name {
+  margin-right: 0.3rem;
+  font-size: 1.6rem;
+}
+
+.recipe-favorite {
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorite__button {
+  font-size: 2rem;
+  background-color: transparent;
+  color: thistle;
+}
+
+.favorite__button-tag {
+  font-size: 0.7rem;
+}
+
+.recipe__detail__group#group-2 {
+  flex-direction: column;
+}
+
+.recipe__detail__image {
+  border: 3px solid rgba(13, 126, 196, 0.625);
+  box-shadow: 10px 10px 0px 0px rgba(13, 126, 196, 0.625);
+}
+
+.recipe__detail__tags {
+  margin-top: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-evenly;
+  flex-grow: 1;
+}
+
+.recipe__detail__tags__group {
+  margin-bottom: 1rem;
+}
+
+.recipe__detail__tags__item {
+  margin-right: 1rem;
+  background-color: rgb(255, 235, 235);
+}
+
+.tag-hightlight {
+  background-color: thistle;
+}
+
+.tag-name {
+  background-color: rgba(0, 128, 128, 0.79);
+  color: white;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.2rem 0.4rem;
+}
+
+.recipe__detail__tags__group#group-3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-type {
+  background-color: rgba(13, 126, 196, 0.625);
+  margin-right: 0.5rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.recipe__detail__group#group-2 {
+  justify-content: space-between;
+}
+
+.recipe__detail__group#group-3 {
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.preparation {
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
+  flex-direction: column;
+}
+
+.ingredients,
+.instruction {
+  background-color: rgba(250, 240, 230, 0.735);
+  padding: 1rem;
+}
+
+.ingredients {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.instruction {
+  flex-grow: 1;
+}
+
+.instruction-link {
+  background-color: rgba(13, 126, 196, 0.413);
+}
+
+.instruction-link:hover {
+  color: white;
+}
+
+@media screen and (min-width: 750px) {
+  .recipe__detail__group#group-2 {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .recipe__detail__image {
+    margin-right: 2rem;
+  }
+
+  .recipe__detail__tags {
+    width: 50%;
+    margin-top: 0;
+  }
+
+  .preparation {
+    flex-direction: row;
+  }
+
+  .ingredients {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}

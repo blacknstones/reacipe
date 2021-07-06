@@ -1,0 +1,93 @@
+.filter__button-add {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    background-color: rgba(199, 199, 199, 0.714);
+    font-family: 'Roboto Mono', monospace;
+    color: black;
+  }
+  
+  .filter__button-add:hover {
+    background-color: thistle;
+    color: white;
+    transition: ease-in-out 0.2s all;
+  }
+  
+  .filter-button {
+    margin: 0.2rem;
+    padding: 0.3rem;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.495);
+  }
+  
+  .filter-button:hover {
+    transition: ease-in-out 0.2s all;
+    transform: scale(1.05);
+    color: linen;
+    background-color: rgba(86, 165, 215, 0.79);
+  }
+  
+  .filter-button.active {
+    background-color: rgba(86, 165, 215, 0.79);
+  }
+  
+  .filters {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 17vh;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+  }
+  
+  .filters__content {
+    background-color: thistle;
+    font-size: 23px;
+    margin: auto;
+    padding: 30px;
+    width: 500px;
+    height: 500px;
+    line-height: 1.1;
+    position: relative;
+  }
+  
+  .filters__group {
+    margin-bottom: 1rem;
+  }
+  .filters-selected {
+    position: absolute;
+    top: 4rem;
+    width: 800px;
+  }
+  .filters__item-selected {
+    background-color: thistle;
+    margin-right: 0.2rem;
+    padding: 0.2rem;
+  }
+  
+  .close__button {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.5rem;
+  }
+  
+  .close__button:hover {
+    color: rgba(13, 126, 196, 0.625);
+    transform: scale(1.2);
+    transition: ease-in-out 0.2s all;
+  }

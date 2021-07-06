@@ -1,0 +1,32 @@
+.search-bar {
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .search__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search__form {
+    display: flex;
+  }
+  
+  .search__input {
+    padding: 0.59rem;
+    border: 2px solid rgb(55, 152, 213);
+  }
+  
+  .search__button {
+    padding: 0.48rem;
+    border: 2px solid rgba(13, 126, 196, 0.625);
+    background-color: rgb(108, 183, 230);
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
+  }
+  
+  .search__button:hover {
+    color: white;
+    transition: ease-in-out 0.2s all;
+  }

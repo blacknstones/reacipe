@@ -1,0 +1,33 @@
+.recipes__container {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .show__button {
+    margin: 3rem;
+    padding: 1rem;
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
+    transition: ease-in-out 0.2s all;
+  }
+  
+  .show__button:hover {
+    background-color: rgba(13, 126, 196, 0.625);
+    color: white;
+  }
+  
+  .cards {
+    width: 100%;
+    margin-top: 3rem;
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-evenly;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 320px));
+    grid-auto-flow: row;
+    grid-gap: 1.5rem;
+  }

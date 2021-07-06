@@ -1,0 +1,33 @@
+.home__page {
+    height: 100vh;
+    width: 100%;
+    background: url('../assets/bg.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .home__page .title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 4px 3px 0px rgba(13, 126, 196, 0.7);
+
+  }
+  
+/*   .home__page .brand {
+      font-size: 2.2rem;
+      color: rgb(13, 126, 196);
+      text-shadow: 4px 3px 0px rgba(255, 255, 255, 0.619);
+  } */
+
+
+  @media screen and (min-width: 600px) {
+    .home__page .title {
+      font-size: 2rem;
+    }
+    
+  }

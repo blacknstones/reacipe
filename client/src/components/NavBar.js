@@ -5,13 +5,13 @@ const NavBar = () => {
   return (
     <nav className='navbar'>
       <Link className='nav-link' to='/'>
-        Home
+        HOME
       </Link>
       <Link className='nav-link' to='/recipes'>
-        Recipes
+        RECIPES
       </Link>
       <Link className='nav-link' to='/favorites'>
-        Favorites
+        FAVORITES
       </Link>
     </nav>
   );
