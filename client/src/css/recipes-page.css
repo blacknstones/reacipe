@@ -1,5 +1,5 @@
 .recipes__container {
-    width: 98%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,7 +20,7 @@
   }
   
   .cards {
-    width: 100%;
+    width: 90%;
     margin-top: 3rem;
     display: grid;
     justify-content: space-evenly;
@@ -30,4 +30,5 @@
     grid-template-columns: repeat(auto-fill, minmax(50px, 320px));
     grid-auto-flow: row;
     grid-gap: 1.5rem;
+    row-gap: 3rem;
   }

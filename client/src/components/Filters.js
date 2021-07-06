@@ -21,32 +21,32 @@ const Filters = ({ setOpen }) => {
           <i className="fas fa-times"></i>
         </button>
         <div className="filters__group">
-          <p>Health</p>
+          <p className="filters__tag">Health</p>
           {dietLabels.map(el => (
             <FilterButton key={el.label} data={el} />
           ))}
         </div>
         <div className="filters__group">
-          <p>Diet</p>
+          <p className="filters__tag">Diet</p>
           {healthLabels.map(el => (
             <FilterButton key={el.label} data={el} />
           ))}
         </div>
 
         <div className="filters__group">
-          <p>Allergy</p>
+          <p className="filters__tag">Allergy</p>
           {allergyLabels.map(el => (
             <FilterButton key={el.label} data={el} />
           ))}
         </div>
         <div className="filters__group">
-          <p>Cuisine</p>
+          <p className="filters__tag">Cuisine</p>
           {cuisineTypes.map(el => (
             <FilterButton key={el.label} data={el} />
           ))}
         </div>
         <div className="filters__group">
-          <p>Meal</p>
+          <p className="filters__tag">Meal</p>
           {mealTypes.map(el => (
             <FilterButton key={el.label} data={el} />
           ))}
