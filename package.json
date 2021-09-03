@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon sever.js",
+    "start": "node server.js sever.js",
     "client": "cd client && npm start"
   },
   "keywords": [],
