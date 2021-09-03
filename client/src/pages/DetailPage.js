@@ -4,6 +4,7 @@ import { addToFavorites, getRecipeById, removeFromFavorites } from '../api/api';
 import globalContext from '../globalContext';
 
 const getFavoriteStatus = (favorites, id) => {
+  if (!favorites) return false;
   return favorites.find(el => el.id === id) ? true : false;
 };
 
@@ -29,7 +30,6 @@ const DetailPage = () => {
   };
 
   useEffect(() => {
-    console.log('in detail page', currentRecipe);
 
     if (data) {
       const recipeData = data.recipes.filter(el =>
@@ -40,11 +40,10 @@ const DetailPage = () => {
         const recipe = recipeData.recipe;
         setCurrentRecipe(recipe);
       } else {
-        console.log('fetching');
         getRecipeById(id).then(res => setCurrentRecipe(res.recipe));
       }
     }
-  }, []);
+  }, [data, id]);
 
   return (
     <div className='detail-page'>
@@ -152,7 +151,7 @@ const DetailPage = () => {
 
                 <div>
                   <p>See full instructions at:</p>
-                  <a className="instruction-link" href={currentRecipe.url} target="_blank">{currentRecipe.source}</a>
+                  <a className="instruction-link" href={currentRecipe.url} target="_blank" rel="noreferrer">{currentRecipe.source}</a>
                 </div>
 
 

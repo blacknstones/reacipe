@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { RecipeCard } from '../components';
-import { getFavorites } from '../api/api';
 import globalContext from '../globalContext';
+import { getFavorites } from '../api/api';
 
 const FavoritePage = () => {
   const { favorites, setFavorites } = useContext(globalContext);
@@ -10,13 +10,14 @@ const FavoritePage = () => {
     getFavorites().then(res => {
       setFavorites(res.data.favorites);
     });
-  }, []);
+  }, [setFavorites]);
+
 
   return (
     <div className='favorites-page'>
       <h1 className='favorites__page__title'>Your Favorites</h1>
       <div className='favorites__container'>
-        {favorites[0] ? (
+        {favorites ? (
           <div className='cards'>
             {favorites.map(el => (
               <RecipeCard data={el.recipe} />

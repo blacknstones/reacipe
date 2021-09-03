@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { getRecipesByQuery } from '../api/api';
 import globalContext from '../globalContext';
@@ -17,7 +17,7 @@ const makeSearchParams = (query, filters) => {
 
 const SearchBar = () => {
   let history = useHistory();
-  const { searchQuery, setSearchQuery, data, setData, filters, setFilters } =
+  const { searchQuery, setSearchQuery, setData, filters } =
     useContext(globalContext);
   const [searchVal, setSearchVal] = useState('');
   const [filterIsOpen, setFilterIsOpen] = useState(false);
@@ -34,17 +34,12 @@ const SearchBar = () => {
     const searchParams = makeSearchParams(searchVal, filters);
 
     getRecipesByQuery(searchParams).then(res => {
-      console.log('in searchbar', res);
       setData(res);
     });
 
     setSearchVal('');
     history.push('/recipes');
   };
-
-  useEffect(() => {
-    console.log(filters);
-  }, [filters]);
 
   return (
     <div className='search-bar'>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import globalContext from '../globalContext';
 import { SearchBar, Cards } from '../components';
 import { getNextPage } from '../api/api';
@@ -15,21 +15,17 @@ const RecipesPage = () => {
     });
   };
 
-  useEffect(() => {
-    console.log('in recipesPage', data);
-  }, [data]);
-
   return (
     <div className="recipes-page">
       
       <SearchBar />
-      {data ? 
+      {data && data.recipes ? 
       <div className="recipes__container">
         <Cards data={data.recipes} /> 
         <button className="show__button" onClick={handleClick}>Show more</button>
       </div>
-      : 
-      <p>Loading...</p>}
+      :
+      <p>{data && data.error ? "Seems like there's no recipe to show. Try to search something else!" : "Loading..."}</p>}
 
     </div>
   );
