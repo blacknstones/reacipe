@@ -1,6 +1,8 @@
 # reacipe
 
 A recipe search app to help you find healthy and easy-to-cook recipes.
+####
+![](https://i.ibb.co/PxTqMYF/reacipe.gif)
 
 ## Demo
 https://reacipe-app.herokuapp.com/
